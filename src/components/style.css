@@ -60,6 +60,12 @@
     width: 30%;
 }
 
+.topIcon{
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+
 @media (max-width: 771px) {
     .filters {
       width: 40%;

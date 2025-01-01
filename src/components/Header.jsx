@@ -6,7 +6,7 @@ import {
   Dropdown,
   Badge,
   Nav,
-  Button
+  Button,
 } from "react-bootstrap";
 import { FaShoppingCart } from "react-icons/fa";
 import { Link } from "react-router-dom";
@@ -17,15 +17,16 @@ function Header() {
   const {
     state: { cart },
     dispatch,
-    productDispatch
+    productDispatch,
   } = CartState();
 
   return (
     <>
       <Navbar bg="dark" variant="dark" style={{ height: 80 }}>
         <Container>
-          <Navbar.Brand>
-            <Link to="/">Shopping Cart</Link>
+          <Navbar.Brand style={{display: "flex", alignItems: "center", gap: 5}}>
+            <img src="src/assets/echomart.webp" alt="" className="topIcon" />
+            <Link to="/">Echo Mart</Link>
           </Navbar.Brand>
 
           <Navbar.Text className="search">
@@ -33,23 +34,23 @@ function Header() {
               style={{ width: 500 }}
               placeholder="Search a Product"
               className="m-auto"
-              onChange={(e)=>{
+              onChange={(e) => {
                 productDispatch({
                   type: "FILTER_BY_SEARCH",
                   payload: e.target.value,
-                })
+                });
               }}
             />
           </Navbar.Text>
 
           <Nav>
-            <Dropdown alignright="true">
+            <Dropdown align="end">
               <Dropdown.Toggle variant="success">
                 <FaShoppingCart color="white" fontSize="25px" />
                 <Badge bg="success">{cart.length}</Badge>
               </Dropdown.Toggle>
 
-              <Dropdown.Menu style={{ minWidth: 370 }}>
+              <Dropdown.Menu style={{ minWidth: 370, right: 0, left: "auto" }}>
                 {cart.length > 0 ? (
                   <>
                     {cart.map((prod) => (
