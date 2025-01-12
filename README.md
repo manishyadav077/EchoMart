@@ -12,6 +12,6 @@ This is an E-commerce web app built on top of **React.js**.
 ## Tech Stack
 
 - **Frontend**: React.js
-- **State Management**: React Context API (or any other state management tool used)
+- **State Management**: React Context API
 - **Data Generation**: Faker.js
 
